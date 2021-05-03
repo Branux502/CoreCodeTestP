@@ -1,0 +1,27 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Core-code Program TestSuite" preserve-order="true" allow-return-values="true" verbose="1">
+
+    <parameter name="includeGroup" value="{{includeGroup}}"/>
+    <test name="Test Cases">
+        <groups>
+            <run>
+                {% for group in includeGroup.split(",") -%}
+                <include name="{{ group }}"/>
+                {% endfor -%}
+            </run>
+        </groups>
+        <classes>
+            <class name="DeleteStudentTest.DeleteStudentTest"/>
+            <class name="GetStudentTest.GetStudentTest"/>
+            <class name="PostStudentTest.PostStudentTest"/>
+            <class name="PutStudentTest.PutStudentTest"/>
+            <!-- Teacher Classes -->
+            <class name="GetTeacherTest.GetTeacherTest"/>
+            <class name="PostTeacherTest.PostStudentTest"/>
+            <class name="DeleteTeacherTest.DeleteTeacherTest"/>
+            <class name="PutTeacherTest.PutTeacherTest"/>
+        </classes>
+    </test>
+
+
+</suite>

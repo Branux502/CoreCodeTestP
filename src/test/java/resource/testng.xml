@@ -1,0 +1,38 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Core-code Program TestSuite" preserve-order="true" allow-return-values="true" verbose="1">
+
+
+    <parameter name="deletedIDTestStudent" value="1"/>
+    <parameter name="deletedIDTestTeacher" value="1"/>
+    <parameter name="putIDTestStudent" value="3"/>
+    <parameter name="nameChangeStudent" value="Jhon"/>
+    <parameter name="emailChangeStudent" value="jhon@gmail.com"/>
+    <parameter name="putIDTestTeacher" value="3"/>
+    <parameter name="nameChangeTeacher" value="Florinda"/>
+    <parameter name="emailChangeTeacher" value="florinda@gmail.com"/>
+    <parameter name="cuiTeacher" value="4018110151020"/>
+
+    <test name="Test Cases">
+        <groups>
+            <run>
+                
+                <include name="testingTeacher"/>
+                <include name="testingStudent"/>
+                
+            </run>
+        </groups>
+        <classes>
+            <class name="DeleteStudentTest.DeleteStudentTest"/>
+            <class name="GetStudentTest.GetStudentTest"/>
+            <class name="PostStudentTest.PostStudentTest"/>
+            <class name="PutStudentTest.PutStudentTest"/>
+            <!-- Teacher Classes -->
+            <class name="GetTeacherTest.GetTeacherTest"/>
+            <class name="PostTeacherTest.PostStudentTest"/>
+            <class name="DeleteTeacherTest.DeleteTeacherTest"/>
+            <class name="PutTeacherTest.PutTeacherTest"/>
+        </classes>
+    </test>
+
+
+</suite>
